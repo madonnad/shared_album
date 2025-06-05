@@ -1,7 +1,7 @@
 name: shared_photo
 description: Create memories that last with the people that matter!
 publish_to: 'none'
-version: 1.0.10
+version: 2.0.0
 
 environment:
   sdk: '>=3.0.5 <4.0.0'

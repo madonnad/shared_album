@@ -29,6 +29,7 @@ class _CameraScreenState extends State<CameraScreen> {
 
   @override
   void initState() {
+    print(widget.cameras);
     CameraDescription camera = widget.cameras.isNotEmpty
         ? widget.cameras[0]
         : const CameraDescription(
@@ -53,6 +54,7 @@ class _CameraScreenState extends State<CameraScreen> {
     await lockOrientation();
     await setZoomValues();
     await controller.setFlashMode(FlashMode.auto);
+    await controller.setFocusMode(FocusMode.auto);
   }
 
   Future<void> lockOrientation() async {
@@ -122,7 +124,6 @@ class _CameraScreenState extends State<CameraScreen> {
                 Gap(10),
                 (controller.value.isInitialized)
                     ? Expanded(
-                        //width: size.width,
                         child: AspectRatio(
                           aspectRatio: 4 / 3,
                           child: GestureDetector(

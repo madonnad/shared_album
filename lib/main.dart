@@ -166,6 +166,7 @@ class MainAppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: darkMode(),
+      debugShowCheckedModeBanner: false,
       home: BlocBuilder<AppBloc, AppState>(
         builder: (context, state) {
           if (state is AuthenticatedState) {
